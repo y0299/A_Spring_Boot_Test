@@ -37,9 +37,9 @@ public class AutoConfig {
     }
 
     @Bean
-    public FilterRegistrationBean filterRegistryBean() {
+    public FilterRegistrationBean filterRegistryBean(CustomEtgHeaderFilter etgFilter) {
         FilterRegistrationBean filter = new FilterRegistrationBean();
-        filter.setFilter(null);
+        filter.setFilter(etgFilter);
         filter.setName("CustomFilter");
         return filter;
     }
